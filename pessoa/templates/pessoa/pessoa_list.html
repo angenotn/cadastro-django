@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block content %} 
+<a href="{% url 'pessoa.novo' %}">Novo</a>
+<table>
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Senha</th>
+            <th>Data de Nascimento</th>
+        </tr>
+        <tbody>
+            {% for pessoa in object_list %} 
+            <tr>
+                <td>{{ pessoa.login }}</td>
+                <td>{{ pessoa.senha|type="password" }}</td>
+                <td>{{ pessoa.data_de_nascimento|date:"d/m/y" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+{% endblock content %}
