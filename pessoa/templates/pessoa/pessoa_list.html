@@ -12,7 +12,7 @@
             {% for pessoa in object_list %} 
             <tr>
                 <td>{{ pessoa.login }}</td>
-                <td>{{ pessoa.senha|type="password" }}</td>
+                <td>{{ pessoa.senha }}</td>
                 <td>{{ pessoa.data_de_nascimento|date:"d/m/y" }}</td>
             </tr>
             {% endfor %}
